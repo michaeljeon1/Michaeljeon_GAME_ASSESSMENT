@@ -18,10 +18,18 @@ namespace Michaeljeon_GAME_ASSESSMENT
 
         //declare a list  missiles from the Missile class
         List<Missile> missiles = new List<Missile>();
+        List<Planet> planets = new List<Planet>();
+
 
         public GameForm()
         {
             InitializeComponent();
+            for (int i = 0; i < 7; i++)
+            {
+                int displacement = 10 + (i * 70);
+                planets.Add(new Planet(displacement));
+            }
+
         }
 
         private void GameForm_Load(object sender, EventArgs e)
@@ -39,9 +47,18 @@ namespace Michaeljeon_GAME_ASSESSMENT
             {
                 m.drawMissile(g);
                 m.moveMissile(g);
+
+
+            }
+
+            foreach (Planet p in planets)
+            {
+                p.draw(g);//Draw the planet
+                p.movePlanet(g);//move the planet
             }
 
         }
+
 
         private void tmrSpaceship_Tick(object sender, EventArgs e)
         {
