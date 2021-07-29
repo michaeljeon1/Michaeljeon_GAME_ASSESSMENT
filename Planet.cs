@@ -25,18 +25,20 @@ namespace Michaeljeon_GAME_ASSESSMENT
             height = 20;
             planetImage = Properties.Resources.planet1;
             planetRec = new Rectangle(x, y, width, height);
+
         }
 
         // Methods for the Planet class
         public void draw(Graphics g)
         {
+           
             planetRec = new Rectangle(x, y, width, height);
-
             g.DrawImage(planetImage, planetRec);
+
         }
         public void movePlanet(Graphics g)
         {
-            y += 5;
+            y += 1;
             planetRec.Location = new Point(x, y);
 
         }

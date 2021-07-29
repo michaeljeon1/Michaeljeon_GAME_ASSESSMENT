@@ -14,11 +14,18 @@ namespace Michaeljeon_GAME_ASSESSMENT
     {
         Graphics g; //declare a graphics object called g so we can draw on the Form
         Spaceship spaceship = new Spaceship(); //create an instance of the Spaceship Class called spaceship
+        Planet[] planet = new Planet[7];
         bool turnLeft, turnRight;
+        int score, lives;
+        public Rectangle planetRec;//variable for a rectangle to place our image in
+        public int x, y, width, height;//variables for the rectangle
+
 
         //declare a list  missiles from the Missile class
         List<Missile> missiles = new List<Missile>();
         List<Planet> planets = new List<Planet>();
+        Random yspeed = new Random();
+
 
 
         public GameForm()
@@ -34,13 +41,48 @@ namespace Michaeljeon_GAME_ASSESSMENT
 
         private void GameForm_Load(object sender, EventArgs e)
         {
+            // pass lives from LblLives Text property to lives variable
+            lives = int.Parse(LblLives.Text);
 
         }
 
         private void GameForm_Paint(object sender, PaintEventArgs e)
         {
-            //get the graphics used to paint on the Form control
-            g = e.Graphics;
+            for (int i = 0; i < 7; i++)
+                //get the graphics used to paint on the Form control
+                g = e.Graphics;
+
+
+            foreach (Planet p in planets)
+            {
+                // generate a random number from 5 to 20 and put it in rndmspeed
+                int rndmspeed = yspeed.Next(5, 20);
+             
+
+
+                p.draw(g);//Draw the planet
+                p.movePlanet(g);//move the planet
+
+                if (spaceship.spaceRec.IntersectsWith(p. planetRec))
+                {
+                    //reset planet[i] back to top of panel
+                    p.y = 30; // set  y value of planetRec
+                    lives -= 1;// lose a life
+                    LblLives.Text = lives.ToString();// display number of lives
+                    CheckLives();
+                }
+                //if the planet reaches the bottom of the form relocate it back to the top
+                if (p.y >= ClientSize.Height)
+                {
+
+                    score += 1;//update the score
+                    LblScore.Text = score.ToString();// display score
+                    p.y = 30;
+                }
+
+            }
+
+
             //Draw the spaceship
             spaceship.drawSpaceship(g);
             foreach (Missile m in missiles)
@@ -49,13 +91,10 @@ namespace Michaeljeon_GAME_ASSESSMENT
                 m.moveMissile(g);
 
 
+
             }
 
-            foreach (Planet p in planets)
-            {
-                p.draw(g);//Draw the planet
-                p.movePlanet(g);//move the planet
-            }
+
 
         }
 
@@ -68,9 +107,10 @@ namespace Michaeljeon_GAME_ASSESSMENT
             }
             if (turnLeft)
                 spaceship.rotationAngle -= 5;
-        
 
-        Invalidate();
+
+
+            Invalidate();
 
         }
 
@@ -97,13 +137,72 @@ namespace Michaeljeon_GAME_ASSESSMENT
 
         }
 
+        private void TmrShoot_Tick(object sender, EventArgs e)
+        {
+            foreach (Planet p in planets)
+            {
+
+                foreach (Missile m in missiles)
+                {
+                    if (p.planetRec.IntersectsWith(m.missileRec))
+                    {
+
+
+
+                        p.x = 600;
+                        missiles.Remove(m);
+                        break;
+                    }
+                }
+
+            }
+
+        }
+
+
         private void GameForm_MouseMove(object sender, MouseEventArgs e)
         {
             spaceship.moveSpaceship(e.X, e.Y);
 
         }
 
-     
+        private void LblLives_Click(object sender, EventArgs e)
+        {
 
+        }
+        private void CheckLives()
+        {
+            if (lives == 0)
+            {
+                TmrPlanet.Enabled = false;
+                tmrSpaceship.Enabled = false;
+                MessageBox.Show("Game Over", "gameover", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                TmrPlanet.Enabled = true;
+
+            }
+        }
+
+
+        private void LblScore_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TmrPlanet_Tick(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 7; i++)
+            {
+
+
+
+            }
+
+        }
     }
+
 }
