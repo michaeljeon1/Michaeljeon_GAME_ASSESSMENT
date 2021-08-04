@@ -24,7 +24,12 @@ namespace Michaeljeon_GAME_ASSESSMENT
             playerName = txtName.Text;
             GameForm Form1 = new GameForm();
             Hide();
-            Form1.ShowDialog();
+            Form1.ShowDialog(); 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

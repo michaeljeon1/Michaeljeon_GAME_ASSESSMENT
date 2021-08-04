@@ -31,9 +31,10 @@ namespace Michaeljeon_GAME_ASSESSMENT
         // Methods for the Planet class
         public void draw(Graphics g)
         {
-           
+
             planetRec = new Rectangle(x, y, width, height);
             g.DrawImage(planetImage, planetRec);
+
 
         }
         public void movePlanet(Graphics g)

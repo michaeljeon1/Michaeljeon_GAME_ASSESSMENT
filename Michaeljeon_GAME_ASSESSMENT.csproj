@@ -52,11 +52,23 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmHighScores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHighScores.Designer.cs">
+      <DependentUpon>FrmHighScores.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GameForm.Designer.cs">
       <DependentUpon>GameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGame.Designer.cs">
+      <DependentUpon>FrmGame.cs</DependentUpon>
     </Compile>
     <Compile Include="Missile.cs" />
     <Compile Include="Planet.cs" />
@@ -66,8 +78,14 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmHighScores.resx">
+      <DependentUpon>FrmHighScores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GameForm.resx">
       <DependentUpon>GameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGame.resx">
+      <DependentUpon>FrmGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -100,6 +118,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\planet1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\alien1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\planet1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

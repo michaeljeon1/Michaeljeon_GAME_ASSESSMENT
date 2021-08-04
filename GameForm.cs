@@ -57,10 +57,8 @@ namespace Michaeljeon_GAME_ASSESSMENT
             {
                 // generate a random number from 5 to 20 and put it in rndmspeed
                 int rndmspeed = yspeed.Next(5, 20);
-             
+                p.draw(g);//Draw the planet 
 
-
-                p.draw(g);//Draw the planet
                 p.movePlanet(g);//move the planet
 
                 if (spaceship.spaceRec.IntersectsWith(p. planetRec))
@@ -150,7 +148,7 @@ namespace Michaeljeon_GAME_ASSESSMENT
 
 
                         p.x = 600;
-                        missiles.Remove(m);
+                       missiles.Remove(m);
                         break;
                     }
                 }
@@ -178,7 +176,7 @@ namespace Michaeljeon_GAME_ASSESSMENT
                 tmrSpaceship.Enabled = false;
                 MessageBox.Show("Game Over", "gameover", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 TmrPlanet.Enabled = true;
-
+                
             }
         }
 
