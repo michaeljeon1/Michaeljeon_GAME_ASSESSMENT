@@ -46,5 +46,10 @@ namespace Michaeljeon_GAME_ASSESSMENT
         {
 
         }
+
+        private void BtnCheck_Click_1(object sender, EventArgs e)
+        {
+          
+        }
     }
     }

@@ -37,6 +37,8 @@ namespace Michaeljeon_GAME_ASSESSMENT
             this.lblPlayerScore = new System.Windows.Forms.Label();
             this.lblMessage = new System.Windows.Forms.Label();
             this.btnReturn = new System.Windows.Forms.Button();
+            this.lstBoxName = new System.Windows.Forms.ListBox();
+            this.lstBoxScore = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -111,11 +113,29 @@ namespace Michaeljeon_GAME_ASSESSMENT
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
+            // lstBoxName
+            // 
+            this.lstBoxName.FormattingEnabled = true;
+            this.lstBoxName.Location = new System.Drawing.Point(53, 54);
+            this.lstBoxName.Name = "lstBoxName";
+            this.lstBoxName.Size = new System.Drawing.Size(64, 134);
+            this.lstBoxName.TabIndex = 8;
+            // 
+            // lstBoxScore
+            // 
+            this.lstBoxScore.FormattingEnabled = true;
+            this.lstBoxScore.Location = new System.Drawing.Point(139, 54);
+            this.lstBoxScore.Name = "lstBoxScore";
+            this.lstBoxScore.Size = new System.Drawing.Size(67, 134);
+            this.lstBoxScore.TabIndex = 9;
+            // 
             // FrmHighScores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 341);
+            this.Controls.Add(this.lstBoxScore);
+            this.Controls.Add(this.lstBoxName);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.lblPlayerScore);
@@ -142,5 +162,7 @@ namespace Michaeljeon_GAME_ASSESSMENT
         private System.Windows.Forms.Label lblPlayerScore;
         private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.ListBox lstBoxName;
+        private System.Windows.Forms.ListBox lstBoxScore;
     }
 }

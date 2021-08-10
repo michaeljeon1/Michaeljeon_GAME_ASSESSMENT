@@ -78,6 +78,7 @@ namespace Michaeljeon_GAME_ASSESSMENT
             this.BtnCheck.TabIndex = 4;
             this.BtnCheck.Text = "Check for High Score";
             this.BtnCheck.UseVisualStyleBackColor = true;
+            this.BtnCheck.Click += new System.EventHandler(this.BtnCheck_Click_1);
             // 
             // BtnQuit
             // 

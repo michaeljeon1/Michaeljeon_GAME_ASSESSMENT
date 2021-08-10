@@ -70,6 +70,7 @@
     <Compile Include="FrmGame.Designer.cs">
       <DependentUpon>FrmGame.cs</DependentUpon>
     </Compile>
+    <Compile Include="HighScores.cs" />
     <Compile Include="Missile.cs" />
     <Compile Include="Planet.cs" />
     <Compile Include="Program.cs" />

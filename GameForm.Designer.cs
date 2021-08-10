@@ -42,13 +42,13 @@ namespace Michaeljeon_GAME_ASSESSMENT
             // tmrSpaceship
             // 
             this.tmrSpaceship.Enabled = true;
-            this.tmrSpaceship.Interval = 1;
+            this.tmrSpaceship.Interval = 3;
             this.tmrSpaceship.Tick += new System.EventHandler(this.tmrSpaceship_Tick);
             // 
             // TmrShoot
             // 
             this.TmrShoot.Enabled = true;
-            this.TmrShoot.Interval = 40;
+            this.TmrShoot.Interval = 20;
             this.TmrShoot.Tick += new System.EventHandler(this.TmrShoot_Tick);
             // 
             // LblScore
@@ -97,7 +97,7 @@ namespace Michaeljeon_GAME_ASSESSMENT
             // TmrPlanet
             // 
             this.TmrPlanet.Enabled = true;
-            this.TmrPlanet.Interval = 1;
+            this.TmrPlanet.Interval = 3;
             this.TmrPlanet.Tick += new System.EventHandler(this.TmrPlanet_Tick);
             // 
             // GameForm
@@ -110,6 +110,7 @@ namespace Michaeljeon_GAME_ASSESSMENT
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LblLives);
             this.Controls.Add(this.LblScore);
+            this.DoubleBuffered = true;
             this.KeyPreview = true;
             this.Name = "GameForm";
             this.Text = "GameForm";

@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Michaeljeon_GAME_ASSESSMENT
 {
     public partial class GameForm : Form
     {
+
         Graphics g; //declare a graphics object called g so we can draw on the Form
         Spaceship spaceship = new Spaceship(); //create an instance of the Spaceship Class called spaceship
         Planet[] planet = new Planet[7];
@@ -30,7 +32,10 @@ namespace Michaeljeon_GAME_ASSESSMENT
 
         public GameForm()
         {
+
+            
             InitializeComponent();
+
             for (int i = 0; i < 7; i++)
             {
                 int displacement = 10 + (i * 70);
@@ -41,6 +46,7 @@ namespace Michaeljeon_GAME_ASSESSMENT
 
         private void GameForm_Load(object sender, EventArgs e)
         {
+
             // pass lives from LblLives Text property to lives variable
             lives = int.Parse(LblLives.Text);
 
@@ -176,7 +182,12 @@ namespace Michaeljeon_GAME_ASSESSMENT
                 tmrSpaceship.Enabled = false;
                 MessageBox.Show("Game Over", "gameover", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 TmrPlanet.Enabled = true;
-                
+                FrmGame FrmGame3 = new FrmGame();
+              FrmGame3.ShowDialog();
+
+                new FrmHighScores("1", score.ToString()).ShowDialog();
+                new HighScores(Name.ToString(), int.Parse("1"));
+              
             }
         }
 
@@ -201,6 +212,8 @@ namespace Michaeljeon_GAME_ASSESSMENT
             }
 
         }
+
+
     }
 
 }
