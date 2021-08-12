@@ -15,6 +15,9 @@ namespace Michaeljeon_GAME_ASSESSMENT
             public FrmGame()
             {
                 InitializeComponent();
+            TxtName.Text = Form1.playerName;
+
+            TxtScore.Text = GameForm.score.ToString();
             }
 
             private void FrmGame_Load(object sender, EventArgs e)
@@ -49,7 +52,9 @@ namespace Michaeljeon_GAME_ASSESSMENT
 
         private void BtnCheck_Click_1(object sender, EventArgs e)
         {
-          
+            FrmHighScores FrmHighScores3 = new FrmHighScores(TxtName.Text, TxtScore.Text);
+            Hide();
+            FrmHighScores3.ShowDialog();
         }
     }
     }

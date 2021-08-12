@@ -18,7 +18,7 @@ namespace Michaeljeon_GAME_ASSESSMENT
         Spaceship spaceship = new Spaceship(); //create an instance of the Spaceship Class called spaceship
         Planet[] planet = new Planet[7];
         bool turnLeft, turnRight;
-        int score, lives;
+        public static int score, lives;
         public Rectangle planetRec;//variable for a rectangle to place our image in
         public int x, y, width, height;//variables for the rectangle
 
@@ -185,7 +185,7 @@ namespace Michaeljeon_GAME_ASSESSMENT
                 FrmGame FrmGame3 = new FrmGame();
               FrmGame3.ShowDialog();
 
-                new FrmHighScores("1", score.ToString()).ShowDialog();
+                new FrmHighScores("name", score.ToString()).ShowDialog();
                 new HighScores(Name.ToString(), int.Parse("1"));
               
             }

@@ -13,7 +13,8 @@ namespace Michaeljeon_GAME_ASSESSMENT
 {
     public partial class Form1 : Form
     {
-        string playerName;
+
+        public static string playerName;
         public Form1()
         {
             InitializeComponent();
